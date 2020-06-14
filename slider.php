@@ -32,19 +32,19 @@ class slider extends common {
 	public static $galleries = [];
 
 	public static $pictures = [];
-	
+
 	//Visibilité des boutons de navigation
 	public static $boutonsVisibles = [
 		'slider1' => 'Bouton suivant ou précédent',
 		'slider2' => 'Zone droite ou gauche de l\'image'
 	];
-	
+
 	//Visibilité des puces de navigation ou pager
 	public static $pagerVisible = [
 		'true' => 'Puces visibles',
 		'false' => 'Puces invisibles'
 	];
-	
+
 	//Largeur du diaporama
 	public static $maxwidth = [
 		'400' => '400 pixels',
@@ -56,7 +56,7 @@ class slider extends common {
 		'1130' => '1130 pixels',
 		'10000' => '100%'
 	];
-	
+
 	//Temps de transition entre diapo
 	public static $fadingtime = [
 		'500' => '500 ms',
@@ -79,20 +79,20 @@ class slider extends common {
 		'7000' => '7 s',
 		'10000' => '10 s'
 	];
-	
+
 	//Visibilité de la lègende
 	public static $visibilite_legende = [
 		'survol' => 'Au survol',
 		'toujours' => 'Toujours visible',
 		'jamais' => 'Jamais visible'
 	];
-	
+
 	//Position de la lègende
 	public static $position_legende = [
 		'haut' => 'En haut',
 		'bas' => 'En bas'
 	];
-	
+
 	//Temps d'apparition légende et boutons
 	public static $apparition = [
 		'opacity 0.2s ease-in' => '0.2s',
@@ -100,13 +100,13 @@ class slider extends common {
 		'opacity 1s ease-in' => '1s',
 		'opacity 2s ease-in'	=> '2s'
 	];
-	
+
 	//Type de boutons
 	public static $bouton= [
 		'rec_noir' => 'rectangle noir',
 		'cer_blanc' => 'cercle blanc'
 	];
-	
+
 	//Choix du tri
 	public static $sort = [
 		'SORT_ASC' => 'Alphabétique naturel',
@@ -114,8 +114,8 @@ class slider extends common {
 		'RAND' => 'Aléatoire',
 		'NONE' => 'Par défaut, sans tri',
 	];
-	
-	const SLIDER_VERSION = '3.1';	
+
+	const SLIDER_VERSION = '3.1';
 
 	/**
 	 * Configuration
@@ -192,7 +192,7 @@ class slider extends common {
 	 * Suppression
 	 */
 	public function delete() {
-		// $url prend l'adresse sans le token	
+		// $url prend l'adresse sans le token
 		// La galerie n'existe pas
 		if($this->getData(['module', $this->getUrl(0), $this->getUrl(2)]) === null) {
 			// Valeurs en sortie
@@ -207,7 +207,7 @@ class slider extends common {
 				'redirect' => helper::baseUrl() . $this->getUrl(0) . '/config',
 				'notification' => 'Suppression  non autorisée'
 			]);
-		}		
+		}
 		// Suppression
 		else {
 			$this->deleteData(['module', $this->getUrl(0), $this->getUrl(2)]);
@@ -242,7 +242,7 @@ class slider extends common {
 				'redirect' => helper::baseUrl() . $this->getUrl(0) . '/config',
 				'notification' => 'Action  non autorisée'
 			]);
-		}			
+		}
 		// La galerie n'existe pas
 		if($this->getData(['module', $this->getUrl(0), $this->getUrl(2)]) === null) {
 			// Valeurs en sortie
@@ -271,7 +271,7 @@ class slider extends common {
 				$this->setData(['module', $this->getUrl(0), $galleryId, [
 					'config' => [
 						'name' => $this->getInput('galleryEditName', helper::FILTER_STRING_SHORT, true),
-						
+
 						//Ajout pour paramétrage du diaporama
 						'boutonsVisibles' => $this->getInput('sliderBoutonsVisibles', helper::FILTER_STRING_SHORT, true),
 						'pagerVisible' => $this->getInput('sliderPagerVisible', helper::FILTER_STRING_SHORT, true),
@@ -284,7 +284,7 @@ class slider extends common {
 						'typeBouton' => $this->getInput('sliderTypeBouton', helper::FILTER_STRING_SHORT, true),
 						'tri' => $this->getInput('sliderTri', helper::FILTER_STRING_SHORT, true),
 						//Fin d'ajout
-						
+
 						'directory' => $this->getInput('galleryEditDirectory', helper::FILTER_STRING_SHORT, true)
 					],
 					'legend' => $legends
