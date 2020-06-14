@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="94px" height="44px" xml:lang="fr"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+   <title>fleche</title>
+   <desc>Boutons pour slider en SVG</desc>
+<circle cx="24" cy="22" r="20" stroke="#ffffff" stroke-width="3" fill="#ffffff" stroke-opacity="0.6" />
+<line x1="28" y1="13" x2="14" y2="22" stroke="#4a69bd" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5"/>
+<line x1="28" y1="31" x2="14" y2="22" stroke="#4a69bd" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5"/>
+
+<circle cx="70" cy="22" r="20" stroke="#ffffff" stroke-width="3" fill="#ffffff" stroke-opacity="0.6" />
+<line x1="67" y1="13" x2="79" y2="22" stroke="#4a69bd" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5" />
+<line x1="67" y1="31" x2="79" y2="22" stroke="#4a69bd" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5" />
+</svg>
